@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="bg">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0F2742">
+<meta name="color-scheme" content="light dark">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="referrer" content="no-referrer">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Ваканция">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' blob:; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' https://api.open-meteo.com https://marine-api.open-meteo.com https://open.er-api.com; worker-src 'self' blob:; media-src 'self' blob:; manifest-src 'self'; base-uri 'self'; object-src 'none'; form-action 'none'">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" href="icons/favicon-64.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="stylesheet" href="styles.css">
+<title>Ваканция</title>
+<style>
+#lock{position:fixed;inset:0;z-index:200;display:grid;place-items:center;padding:24px;background:linear-gradient(180deg,#0F2742,#1A4472);color:#fff;font-family:var(--ui,system-ui)}
+#lock .lk{width:100%;max-width:340px;text-align:center}
+#lock img{width:96px;height:96px;border-radius:24px;box-shadow:0 12px 30px rgba(0,0,0,.35)}
+#lock h1{font:600 22px/1.2 var(--display,system-ui);margin:18px 0 6px;letter-spacing:-.02em}
+#lock p{margin:0 0 18px;font-size:14px;line-height:1.45;color:rgba(255,255,255,.78)}
+#lock input{width:100%;height:52px;border-radius:14px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.1);color:#fff;font:500 17px/1 var(--ui,system-ui);padding:0 16px;text-align:center;outline:none}
+#lock input:focus{border-color:#F2A93B;background:rgba(255,255,255,.14)}
+#lock button{width:100%;height:52px;margin-top:10px;border-radius:14px;border:0;background:#F2A93B;color:#0F2742;font:700 16px/1 var(--ui,system-ui)}
+#lock .msg{min-height:20px;margin-top:12px;font-size:14px;color:#FFD2DE}
+#lock .wait{display:none;margin:22px auto 0;width:28px;height:28px;border-radius:50%;border:3px solid rgba(255,255,255,.25);border-top-color:#F2A93B;animation:lkspin .8s linear infinite}
+@keyframes lkspin{to{transform:rotate(360deg)}}
+#lock[data-state="boot"] form,#lock[data-state="boot"] p,#lock[data-state="busy"] form,#lock[data-state="err"] form{display:none}
+#lock[data-state="boot"] .wait,#lock[data-state="busy"] .wait{display:block}
+#lock[data-state="err"] .msg{color:#fff}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<div id="sheets"></div>
+<div id="lock" data-state="boot"><div class="lk">
+  <img src="icons/icon-192.png" alt="">
+  <h1>Ваканция</h1>
+  <p>Въведи семейната парола. Нужна е само веднъж на този телефон.</p>
+  <form id="lk-form" autocomplete="off"><input id="lk-pw" type="password" autocomplete="current-password" autocapitalize="none" spellcheck="false" placeholder="Парола" aria-label="Парола"><button type="submit">Отключи</button></form>
+  <div class="wait" aria-hidden="true"></div>
+  <div class="msg" id="lk-msg" role="status"></div>
+</div></div>
+<noscript><p style="padding:24px;font:16px system-ui">Приложението има нужда от JavaScript.</p></noscript>
+<script src="lock.js"></script>
+</body>
+</html>

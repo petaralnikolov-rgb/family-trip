@@ -1,0 +1,23 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0F2742"/><stop offset="1" stop-color="#1A4472"/></linearGradient>
+    <linearGradient id="lampg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFE7A8"/><stop offset=".5" stop-color="#F2A93B"/><stop offset="1" stop-color="#B8690E"/></linearGradient>
+    <clipPath id="c"><rect width="512" height="512" rx="112"/></clipPath>
+  </defs>
+  <g clip-path="url(#c)">
+    <rect width="512" height="512" fill="url(#sky)"/>
+    <circle cx="352" cy="300" r="46" fill="#F2A93B"/>
+    <path d="M0 352 L54 318 L98 334 L160 270 L206 304 L250 284 L302 324 L356 262 L402 298 L448 282 L512 316 L512 512 L0 512Z" fill="#C23F67" opacity=".62"/>
+    <path d="M0 392 L48 372 L92 384 L140 348 L190 376 L238 360 L290 388 L340 352 L392 380 L440 362 L512 380 L512 512 L0 512Z" fill="#6B2347"/>
+    <path d="M0 430 C80 420 140 436 216 428 S356 418 430 430 S490 434 512 428 L512 512 L0 512Z" fill="#1D5FB4"/>
+    <g transform="translate(96 74) scale(5)">
+      <path d="M10 23 C10 16 19 13 30 13 C40 13 46 16 47.5 20 L58 13.6 C60.8 12 63 14 61 16.2 L50.5 26 C47 30 40 32 30 32 C18 32 10 29 10 23Z" fill="url(#lampg)"/>
+      <path d="M10.5 22 C3.2 22 2.2 13.6 8.2 12.6 C11 12.1 13.2 13.6 13.2 15.8" fill="none" stroke="url(#lampg)" stroke-width="2.8" stroke-linecap="round"/>
+      <path d="M21.5 13.2 C22.6 7.6 37.4 7.6 38.5 13.2Z" fill="url(#lampg)"/><circle cx="30" cy="6.3" r="2.4" fill="url(#lampg)"/>
+      <path d="M23 32 L37 32 L35.4 36 L24.6 36Z" fill="url(#lampg)"/><ellipse cx="30" cy="37.4" rx="10.5" ry="2.2" fill="#B8690E"/>
+      <path d="M17 21.5 C22 19.6 38 19.6 43 21.5" fill="none" stroke="#FFF2CC" stroke-width="1.2" opacity=".8"/>
+    </g>
+    <g fill="#FFE7A8"><circle cx="118" cy="96" r="5"/><circle cx="410" cy="78" r="4"/><circle cx="430" cy="160" r="3"/><circle cx="76" cy="190" r="3"/></g>
+  </g>
+</svg>
