@@ -1,5 +1,5 @@
 /* Офлайн кеш. Версията и списъкът се попълват при сглобяване. */
-const CACHE = 'pv5-web-119f07beaa';
+const CACHE = 'pv5-web-4c6d060aed';
 const PRECACHE = ["./","./app.bin","./fonts/onest-cyrillic-wght-normal.woff2","./fonts/onest-latin-wght-normal.woff2","./fonts/unbounded-cyrillic-wght-normal.woff2","./fonts/unbounded-latin-wght-normal.woff2","./icons/apple-touch-icon.png","./icons/favicon-64.png","./icons/icon-192.png","./icons/icon-512.png","./icons/icon.svg","./index.html","./lock.js","./manifest.webmanifest","./styles.css","./vendor/pdf.min.mjs","./vendor/pdf.worker.min.mjs"];
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(PRECACHE)).then(() => self.skipWaiting()));
